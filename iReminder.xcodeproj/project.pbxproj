@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		450DF0DF1837F05900A5543F /* PillItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 450DF0DE1837F05900A5543F /* PillItem.m */; };
 		45EF0A4E1837B7760038EC75 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45EF0A4D1837B7750038EC75 /* Foundation.framework */; };
 		45EF0A501837B7760038EC75 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45EF0A4F1837B7760038EC75 /* CoreGraphics.framework */; };
 		45EF0A521837B7760038EC75 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45EF0A511837B7760038EC75 /* UIKit.framework */; };
@@ -19,6 +20,9 @@
 		45EF0A691837B7760038EC75 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45EF0A511837B7760038EC75 /* UIKit.framework */; };
 		45EF0A711837B7760038EC75 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45EF0A6F1837B7760038EC75 /* InfoPlist.strings */; };
 		45EF0A731837B7760038EC75 /* iReminderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EF0A721837B7760038EC75 /* iReminderTests.m */; };
+		45EF0A7F1837BBC50038EC75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45EF0A7E1837BBC50038EC75 /* Main.storyboard */; };
+		45EF0A821837C4190038EC75 /* AddPillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EF0A811837C4190038EC75 /* AddPillViewController.m */; };
+		45EF0A861837C51E0038EC75 /* PillListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EF0A851837C51E0038EC75 /* PillListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		450DF0DD1837F05900A5543F /* PillItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PillItem.h; sourceTree = "<group>"; };
+		450DF0DE1837F05900A5543F /* PillItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PillItem.m; sourceTree = "<group>"; };
 		45EF0A4A1837B7750038EC75 /* iReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45EF0A4D1837B7750038EC75 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		45EF0A4F1837B7760038EC75 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -48,6 +54,11 @@
 		45EF0A6E1837B7760038EC75 /* iReminderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iReminderTests-Info.plist"; sourceTree = "<group>"; };
 		45EF0A701837B7760038EC75 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		45EF0A721837B7760038EC75 /* iReminderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iReminderTests.m; sourceTree = "<group>"; };
+		45EF0A7E1837BBC50038EC75 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		45EF0A801837C4190038EC75 /* AddPillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPillViewController.h; sourceTree = "<group>"; };
+		45EF0A811837C4190038EC75 /* AddPillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPillViewController.m; sourceTree = "<group>"; };
+		45EF0A841837C51E0038EC75 /* PillListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PillListViewController.h; sourceTree = "<group>"; };
+		45EF0A851837C51E0038EC75 /* PillListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PillListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +85,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		450DF0E01837F05D00A5543F /* PillItem */ = {
+			isa = PBXGroup;
+			children = (
+				450DF0DD1837F05900A5543F /* PillItem.h */,
+				450DF0DE1837F05900A5543F /* PillItem.m */,
+			);
+			name = PillItem;
+			sourceTree = "<group>";
+		};
 		45EF0A411837B7750038EC75 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +127,10 @@
 		45EF0A531837B7760038EC75 /* iReminder */ = {
 			isa = PBXGroup;
 			children = (
+				450DF0E01837F05D00A5543F /* PillItem */,
+				45EF0A871837C52A0038EC75 /* PillListViewController */,
+				45EF0A831837C41F0038EC75 /* AddPillViewController */,
+				45EF0A7E1837BBC50038EC75 /* Main.storyboard */,
 				45EF0A5C1837B7760038EC75 /* AppDelegate.h */,
 				45EF0A5D1837B7760038EC75 /* AppDelegate.m */,
 				45EF0A5F1837B7760038EC75 /* Images.xcassets */,
@@ -142,6 +166,24 @@
 				45EF0A6F1837B7760038EC75 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		45EF0A831837C41F0038EC75 /* AddPillViewController */ = {
+			isa = PBXGroup;
+			children = (
+				45EF0A801837C4190038EC75 /* AddPillViewController.h */,
+				45EF0A811837C4190038EC75 /* AddPillViewController.m */,
+			);
+			name = AddPillViewController;
+			sourceTree = "<group>";
+		};
+		45EF0A871837C52A0038EC75 /* PillListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				45EF0A841837C51E0038EC75 /* PillListViewController.h */,
+				45EF0A851837C51E0038EC75 /* PillListViewController.m */,
+			);
+			name = PillListViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45EF0A7F1837BBC50038EC75 /* Main.storyboard in Resources */,
 				45EF0A581837B7760038EC75 /* InfoPlist.strings in Resources */,
 				45EF0A601837B7760038EC75 /* Images.xcassets in Resources */,
 			);
@@ -241,6 +284,9 @@
 			files = (
 				45EF0A5E1837B7760038EC75 /* AppDelegate.m in Sources */,
 				45EF0A5A1837B7760038EC75 /* main.m in Sources */,
+				45EF0A821837C4190038EC75 /* AddPillViewController.m in Sources */,
+				450DF0DF1837F05900A5543F /* PillItem.m in Sources */,
+				45EF0A861837C51E0038EC75 /* PillListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +487,7 @@
 				45EF0A781837B7760038EC75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		45EF0A791837B7760038EC75 /* Build configuration list for PBXNativeTarget "iReminderTests" */ = {
 			isa = XCConfigurationList;
@@ -449,6 +496,7 @@
 				45EF0A7B1837B7760038EC75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
