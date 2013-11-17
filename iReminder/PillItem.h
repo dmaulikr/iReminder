@@ -12,7 +12,7 @@
 
 @property NSString *pillName;
 @property BOOL taken;
-@property (readonly) NSDate *time;
+@property NSDate *time;
 
 
 

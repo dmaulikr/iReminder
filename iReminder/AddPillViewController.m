@@ -11,11 +11,19 @@
 
 @interface AddPillViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (weak, nonatomic) IBOutlet UIDatePicker *timePicker;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
     
 @end
 
 @implementation AddPillViewController
+
+// Funció que amaga el teclat
+// NO FUNCIONA ENCARA
+- (IBAction)dismissKeyboard:(id)sender {
+    [self.textField resignFirstResponder];
+
+}
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -24,6 +32,7 @@
     {
         self.pill = [[PillItem alloc] init];
         self.pill.pillName = self.textField.text;
+        self.pill.time = self.timePicker.date;
         self.pill.taken = NO;
     }
 }

@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Rff Systems. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
 #import "PillListViewController.h"
 #import "PillItem.h"
 #import "AddPillViewController.h"
@@ -24,6 +25,7 @@
  */
 - (void) loadInitialData
 {
+    /*
     PillItem *pill1 = [[PillItem alloc] init];
     pill1.pillName = @"Tiroxina";
     [self.pillList addObject:pill1];
@@ -35,7 +37,7 @@
     PillItem *pill3 = [[PillItem alloc] init];
     pill3.pillName = @"Calci";
     [self.pillList addObject:pill3];
-
+     */
 }
 
 
@@ -68,7 +70,7 @@
     [super viewDidLoad];
     
     self.pillList =[[NSMutableArray alloc] init];
-    [self loadInitialData];
+    //[self loadInitialData];                       //Ja no carreguem les dades inicials
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -107,22 +109,49 @@
 {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    if (cell == nil) {
+        //cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] ;
+
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+    
+    CALayer* CellLayer = cell.layer;
+    [CellLayer setCornerRadius:12.0f];
+    [CellLayer setMasksToBounds:YES];
+    [CellLayer setBorderWidth:1.0f];
+
 
     // Configure the cell...
     PillItem *pill = [self.pillList objectAtIndex:indexPath.row];
     cell.textLabel.text = pill.pillName;
-    cell.detailTextLabel.text = @"Time";
-    cell.backgroundColor = [UIColor redColor];
     
     
+    NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
+    [outputFormatter setDateFormat:@"h:mm a"];
+    
+    cell.detailTextLabel.text = [outputFormatter stringFromDate:pill.time];
+    //self.myLabel.text = [outputFormatter stringFromDate:self.myDatePicker.date];
+    
+    //[outputFormatter release];
+    //cell.detailTextLabel.text = @"12:00";
+    
+    
+    
+    //cell.backgroundColor = [UIColor redColor];
+    
+
     if(pill.taken)
     {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        //cell.accessoryType = UITableViewCellAccessoryCheckmark;
         cell.backgroundColor = [UIColor greenColor];
     }
     else
     {
-        cell.accessoryType = UITableViewCellAccessoryNone;
+        //cell.accessoryType = UITableViewCellAccessoryNone;
+        cell.backgroundColor = [UIColor redColor];
     }
     
     return cell;

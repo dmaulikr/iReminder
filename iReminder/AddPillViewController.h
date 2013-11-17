@@ -11,4 +11,5 @@
 
 @interface AddPillViewController : UIViewController
 @property PillItem *pill;
+@property NSDate *time;
 @end
