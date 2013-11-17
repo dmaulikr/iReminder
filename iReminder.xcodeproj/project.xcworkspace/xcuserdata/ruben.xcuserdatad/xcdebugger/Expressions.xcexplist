@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[AddPillViewController prepareForSegue:sender:]:AddPillViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.timePicker.date">
+            </PersistentString>
+            <PersistentString
+               value = "self.pill.time">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
