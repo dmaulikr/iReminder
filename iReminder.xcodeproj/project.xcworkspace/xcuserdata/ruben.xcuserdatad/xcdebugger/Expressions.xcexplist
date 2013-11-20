@@ -13,5 +13,16 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "-[PillListViewController tableView:commitEditingStyle:forRowAtIndexPath:]:PillListViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.pillList">
+            </PersistentString>
+            <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

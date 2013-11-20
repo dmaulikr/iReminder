@@ -18,11 +18,19 @@
 
 @implementation AddPillViewController
 
-// Funció que amaga el teclat
-// NO FUNCIONA ENCARA
-- (IBAction)dismissKeyboard:(id)sender {
-    [self.textField resignFirstResponder];
-
+/*  -- HIDE KEYBOARD --  
+ * Implementem la funcio textFieldShouldReturn i preguntem si 
+ * el objecte que rebem es e l mateix busquem i fem un
+ * resign del first responder que es el teclat 
+ */
+- (BOOL) textFieldShouldReturn:(UITextField *)textField
+{
+    if (textField == self.textField)
+    {
+        [textField resignFirstResponder];
+    }
+    
+    return YES;
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -50,6 +58,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+/*  -- HIDE KEYBOARD --  
+ *  Afegim el patró delegate al ViewController 
+ */
+    self.textField.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning

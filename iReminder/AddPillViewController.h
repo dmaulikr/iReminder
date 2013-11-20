@@ -9,7 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "PillItem.h"
 
-@interface AddPillViewController : UIViewController
+/*  -- HIDE KEYBOARD --  
+ *  Afegim el <UITextFieldDelegate> per a poder usar el patró
+ *  Delegate amb els UITextFields. 
+ *  NOTA: S'ha de posar sempre al ViewController on esta el control que volem usar.
+ */
+@interface AddPillViewController : UIViewController <UITextFieldDelegate>
 @property PillItem *pill;
 @property NSDate *time;
 @end
