@@ -51,7 +51,15 @@
     AddPillViewController *source = [segue sourceViewController];
     PillItem *pill = source.pill;
     if (pill != nil) {
+        // Comming from add new pill
         [self.pillList addObject:pill];
+        
+        // now I have to order the list
+        [self.pillList sortUsingDescriptors:
+             [NSArray arrayWithObjects:
+             [NSSortDescriptor sortDescriptorWithKey:@"time" ascending:YES], nil]];
+
+        // repaint the data table
         [self.tableView reloadData];
     }
 }
@@ -113,8 +121,6 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     if (cell == nil) {
-        //cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-        
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] ;
 
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -135,24 +141,13 @@
     [outputFormatter setDateFormat:@"h:mm a"];
     
     cell.detailTextLabel.text = [outputFormatter stringFromDate:pill.time];
-    //self.myLabel.text = [outputFormatter stringFromDate:self.myDatePicker.date];
-    
-    //[outputFormatter release];
-    //cell.detailTextLabel.text = @"12:00";
-    
-    
-    
-    //cell.backgroundColor = [UIColor redColor];
-    
-
+  
     if(pill.taken)
     {
-        //cell.accessoryType = UITableViewCellAccessoryCheckmark;
         cell.backgroundColor = [UIColor greenColor];
     }
     else
     {
-        //cell.accessoryType = UITableViewCellAccessoryNone;
         cell.backgroundColor = [UIColor redColor];
     }
     
@@ -174,17 +169,13 @@
 
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        //[tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        //[self.tableView removeObjectAtIndex:indexPath.row];
-        //[self.tableView deleteRowsAtIndexPaths:indexPath.row withRowAnimation:(UITableViewRowAnimation)];
+
+        // Delete selected element.
+        [self.pillList removeObjectAtIndex:indexPath.row];
+        
+        // Repaint table data again
+        [self.tableView reloadData];
     }
-    /*
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    } 
-     */
-    
-    
 }
 
 /*
